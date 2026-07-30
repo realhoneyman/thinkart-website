@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>גלריה | THINKART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">THINKART</a>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html">בית</a></li>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="services.html">שירותים</a></li>
+        <li><a href="gallery.html" class="active">גלריה</a></li>
+        <li><a href="contact.html">צור קשר</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="btn nav-cta">קביעת ייעוץ</a>
+    <button class="burger" id="burgerBtn" aria-label="תפריט">☰</button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">בית</a> / גלריה</div>
+    <h1>גלריית עבודות</h1>
+    <p>מבחר מתוך פרויקטי אוצרות שביצענו לאחרונה בבתים פרטיים ובמשרדים.</p>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>אוצרות אמנות אישית</span>
+    <span>THINKART</span>
+    <span>בתים ומשרדים</span>
+    <span>אוצרות אמנות אישית</span>
+    <span>THINKART</span>
+    <span>בתים ומשרדים</span>
+  </div>
+</div>
+
+<section class="gallery on-white">
+  <div class="container">
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">הכל</button>
+      <button class="filter-btn" data-filter="home">בתים פרטיים</button>
+      <button class="filter-btn" data-filter="office">משרדים</button>
+      <button class="filter-btn" data-filter="collection">אוספים</button>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-01.jpg" alt="מסדרון משרדי עם עבודות אמנות ממוסגרות">
+        <div class="overlay"><span><strong>לובי משרדים</strong>אוצרות למסדרון כניסה</span></div>
+      </div>
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-02.jpg" alt="מסדרון משרדי ארוך עם עבודות גיאומטריות">
+        <div class="overlay"><span><strong>קומת משרדים</strong>סדרת עבודות גיאומטריות</span></div>
+      </div>
+      <div class="gallery-item" data-cat="collection">
+        <img src="images/gallery-03.jpg" alt="פרט מקרוב של עבודת אמנות בגוון זהב">
+        <div class="overlay"><span><strong>אוסף פרטי</strong>עבודה בגימור זהב</span></div>
+      </div>
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-05.jpg" alt="שתי עבודות אמנות אבסטרקטיות במשרד">
+        <div class="overlay"><span><strong>קומת משרדים</strong>זוג עבודות נבחרות</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-06.jpg" alt="קיר זיכרון משפחתי עם מסגרות וינטג'">
+        <div class="overlay"><span><strong>בית פרטי</strong>קיר זיכרון משפחתי</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-07.jpg" alt="עבודת אמנות מופשטת בצהוב ליד חלון">
+        <div class="overlay"><span><strong>בית פרטי</strong>עבודה מופשטת בפינת ישיבה</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-08.jpg" alt="מדף קרמיקה לבנה ועבודת אמנות">
+        <div class="overlay"><span><strong>בית פרטי</strong>פינת קרמיקה ואמנות בלבן</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-09.jpg" alt="עבודת אמנות בוטנית מול הגינה">
+        <div class="overlay"><span><strong>בית פרטי</strong>עבודה בוטנית מול הגינה</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-10.jpg" alt="פסל ותפאורה על שידה עתיקה">
+        <div class="overlay"><span><strong>בית פרטי</strong>פסל ותפאורה בסלון</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-11.jpg" alt="פינת ישיבה קלאסית עם עבודת אמנות ממוסגרת">
+        <div class="overlay"><span><strong>בית פרטי</strong>פינת ישיבה קלאסית</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-12.jpg" alt="חדר אוכל עם עבודת קיר כחולה גדולה">
+        <div class="overlay"><span><strong>בית פרטי</strong>עבודת קיר בחדר האוכל</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-15.jpg" alt="סלון פנטהאוז עם חלונות ענק ועבודת אמנות">
+        <div class="overlay"><span><strong>פנטהאוז</strong>עבודת פופ-ארט מול הים</span></div>
+      </div>
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-16.jpg" alt="פסל זכוכית עגול ועבודת קיר צבעונית במסדרון משרדי">
+        <div class="overlay"><span><strong>לובי משרדים</strong>פסל זכוכית ועבודת קיר צבעונית</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container" style="text-align:center;">
+    <div class="reveal">
+      <span class="section-label">אהבתם מה שראיתם?</span>
+      <h2 style="font-size:clamp(28px,4vw,40px);margin-bottom:20px;">בואו נתחיל בפרויקט שלכם</h2>
+      <p style="color:var(--grey);max-width:480px;margin:0 auto 32px;">קבעו פגישת ייעוץ ראשונית ללא התחייבות.</p>
+      <a href="contact.html" class="btn btn-solid">צור קשר</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">THINKART</div>
+        <p>אוצרות אמנות אישית לבתים ומשרדים. אנחנו מאמינים שכל קיר יכול לספר סיפור.</p>
+      </div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="services.html">שירותים</a></li>
+          <li><a href="gallery.html">גלריה</a></li>
+          <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul>
+          <li><a href="services.html">אוצרות לבתים</a></li>
+          <li><a href="services.html">אוצרות למשרדים</a></li>
+          <li><a href="services.html">ליווי רכישה</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>צרו קשר</h4>
+        <ul>
+          <li><a href="#">studio@thinkart.co.il</a></li>
+          <li><a href="#">03-1234567</a></li>
+          <li><a href="#">תל אביב</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 THINKART. כל הזכויות שמורות.</span>
+      <span>עוצב באהבה לאמנות</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

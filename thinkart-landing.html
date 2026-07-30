@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>THINKART | אוצרות אמנות אישית</title>
+<script>document.documentElement.classList.add('js-anim');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --black:#111111;
+    --white:#ffffff;
+    --grey:#7a7a7a;
+    --light-grey:#f4f3f1;
+    --line:#e4e2de;
+    --accent:#b08d57;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Assistant', sans-serif;
+    color:var(--black);
+    background:var(--white);
+    line-height:1.6;
+    font-weight:400;
+  }
+  h1,h2,h3,.serif{
+    font-family:'Frank Ruhl Libre', serif;
+    font-weight:500;
+    letter-spacing:.5px;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{display:block;width:100%;height:100%;object-fit:cover;}
+  .container{max-width:1180px;margin:0 auto;padding:0 32px;}
+  .section-label{
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:12px;
+    color:var(--accent);
+    font-weight:600;
+    margin-bottom:14px;
+    display:block;
+  }
+  .btn{
+    display:inline-block;
+    padding:15px 38px;
+    border:1px solid var(--black);
+    font-size:14px;
+    letter-spacing:1px;
+    transition:all .3s ease;
+    cursor:pointer;
+    background:transparent;
+  }
+  .btn:hover{background:var(--black);color:var(--white);}
+  .btn-solid{background:var(--black);color:var(--white);}
+  .btn-solid:hover{background:transparent;color:var(--black);}
+
+  /* Header */
+  header{
+    position:fixed;top:0;right:0;left:0;
+    background:rgba(255,255,255,.92);
+    backdrop-filter:blur(8px);
+    z-index:100;
+    border-bottom:1px solid var(--line);
+  }
+  .nav-wrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:20px 32px;
+    max-width:1180px;margin:0 auto;
+  }
+  .logo{
+    font-family:'Frank Ruhl Libre', serif;
+    font-size:24px;
+    letter-spacing:4px;
+    font-weight:600;
+  }
+  nav ul{display:flex;gap:36px;list-style:none;}
+  nav a{font-size:15px;letter-spacing:.3px;position:relative;}
+  nav a::after{
+    content:'';position:absolute;bottom:-4px;right:0;width:0;height:1px;
+    background:var(--black);transition:width .3s;
+  }
+  nav a:hover::after{width:100%;}
+  .nav-cta{display:none;}
+  @media(min-width:900px){.nav-cta{display:inline-block;}}
+  .burger{display:none;font-size:26px;background:none;border:none;cursor:pointer;}
+
+  /* Hero */
+  .hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    padding-top:100px;
+    background:var(--white);
+    position:relative;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1fr;gap:60px;
+    align-items:center;width:100%;
+  }
+  @media(min-width:900px){.hero-grid{grid-template-columns:1.1fr .9fr;}}
+  .hero-text h1{
+    font-size:clamp(34px,5vw,58px);
+    line-height:1.15;
+    margin-bottom:24px;
+  }
+  .hero-text p{
+    font-size:18px;
+    color:var(--grey);
+    max-width:480px;
+    margin-bottom:36px;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-visual{
+    position:relative;
+    aspect-ratio:4/5;
+    background:var(--light-grey);
+    overflow:hidden;
+  }
+  .hero-visual img{transition:transform 8s ease;}
+  .hero-visual:hover img{transform:scale(1.06);}
+  .hero-visual::before{
+    content:'';position:absolute;inset:18px;
+    border:1px solid rgba(255,255,255,.6);
+    z-index:2;pointer-events:none;
+  }
+  .hero-stats{
+    display:flex;gap:48px;margin-top:56px;padding-top:36px;
+    border-top:1px solid var(--line);
+    max-width:520px;
+  }
+  .hero-stats div strong{font-family:'Frank Ruhl Libre',serif;font-size:28px;display:block;}
+  .hero-stats div span{font-size:13px;color:var(--grey);letter-spacing:.3px;}
+
+  /* About */
+  .about{padding:120px 0;background:var(--light-grey);}
+  .about-grid{display:grid;grid-template-columns:1fr;gap:56px;align-items:center;}
+  @media(min-width:900px){.about-grid{grid-template-columns:.9fr 1.1fr;}}
+  .about-imgs{position:relative;height:420px;}
+  .about-imgs .img1{position:absolute;top:0;right:0;width:70%;height:78%;overflow:hidden;}
+  .about-imgs .img2{position:absolute;bottom:0;left:0;width:55%;height:55%;overflow:hidden;border:8px solid var(--light-grey);}
+  .about h2{font-size:clamp(28px,4vw,40px);margin-bottom:22px;}
+  .about p{color:var(--grey);font-size:16px;margin-bottom:18px;max-width:520px;}
+  .about-points{display:flex;flex-direction:column;gap:16px;margin-top:28px;}
+  .about-point{display:flex;align-items:flex-start;gap:14px;}
+  .about-point .num{
+    font-family:'Frank Ruhl Libre',serif;color:var(--accent);
+    font-size:15px;border:1px solid var(--accent);
+    width:30px;height:30px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;flex-shrink:0;
+  }
+
+  /* Services */
+  .services{padding:120px 0;}
+  .services-head{max-width:640px;margin-bottom:64px;}
+  .services-head h2{font-size:clamp(28px,4vw,40px);}
+  .services-head p{color:var(--grey);margin-top:16px;font-size:16px;}
+  .services-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  @media(min-width:700px){.services-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(min-width:1050px){.services-grid{grid-template-columns:repeat(4,1fr);}}
+  .service-card{
+    background:var(--white);padding:44px 32px;
+    transition:background .35s ease;
+  }
+  .service-card:hover{background:var(--light-grey);}
+  .service-card .icon{
+    width:44px;height:44px;margin-bottom:26px;
+    border:1px solid var(--black);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Frank Ruhl Libre',serif;font-size:18px;
+  }
+  .service-card h3{font-size:19px;margin-bottom:12px;font-weight:600;font-family:'Assistant',sans-serif;}
+  .service-card p{font-size:14.5px;color:var(--grey);}
+
+  /* Gallery */
+  .gallery{padding:120px 0;background:var(--black);color:var(--white);}
+  .gallery-head{
+    display:flex;justify-content:space-between;align-items:flex-end;
+    flex-wrap:wrap;gap:24px;margin-bottom:56px;
+  }
+  .gallery-head h2{font-size:clamp(28px,4vw,40px);color:var(--white);}
+  .gallery-head p{color:#b8b8b8;max-width:420px;font-size:15px;}
+  .gallery .section-label{color:var(--accent);}
+  .gallery-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:40px;}
+  .filter-btn{
+    background:transparent;border:1px solid #444;color:#ccc;
+    padding:9px 20px;font-size:13px;letter-spacing:.5px;
+    cursor:pointer;transition:all .25s;
+  }
+  .filter-btn.active,.filter-btn:hover{background:var(--white);color:var(--black);border-color:var(--white);}
+  .gallery-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:2px;
+  }
+  @media(min-width:700px){.gallery-grid{grid-template-columns:repeat(4,1fr);}}
+  .gallery-item{
+    position:relative;aspect-ratio:3/4;overflow:hidden;cursor:pointer;
+  }
+  .gallery-item img{transition:transform .6s ease, filter .6s ease;filter:grayscale(15%);}
+  .gallery-item:hover img{transform:scale(1.08);filter:grayscale(0%);}
+  .gallery-item .overlay{
+    position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,.75), transparent 55%);
+    display:flex;align-items:flex-end;padding:18px;
+    opacity:0;transition:opacity .35s;
+  }
+  .gallery-item:hover .overlay{opacity:1;}
+  .gallery-item .overlay span{font-size:13px;letter-spacing:.5px;}
+  .gallery-item .overlay strong{display:block;font-family:'Frank Ruhl Libre',serif;font-size:16px;margin-bottom:4px;}
+  .gallery-more{text-align:center;margin-top:52px;}
+  .gallery-more .btn{border-color:#666;color:var(--white);}
+  .gallery-more .btn:hover{background:var(--white);color:var(--black);}
+
+  /* Process */
+  .process{padding:120px 0;}
+  .process-head{max-width:600px;margin-bottom:70px;}
+  .process-head h2{font-size:clamp(28px,4vw,40px);}
+  .process-steps{display:grid;grid-template-columns:1fr;gap:0;position:relative;}
+  @media(min-width:900px){.process-steps{grid-template-columns:repeat(4,1fr);}}
+  .process-step{
+    padding:0 26px 26px 0;position:relative;
+  }
+  .process-step .step-num{
+    font-family:'Frank Ruhl Libre',serif;font-size:52px;color:var(--light-grey);
+    -webkit-text-stroke:1px var(--black);
+    color:transparent;
+    margin-bottom:18px;
+    display:block;
+  }
+  .process-step h3{font-size:18px;margin-bottom:10px;font-weight:600;font-family:'Assistant',sans-serif;}
+  .process-step p{font-size:14.5px;color:var(--grey);}
+
+  /* Testimonials */
+  .testimonials{background:var(--light-grey);padding:120px 0;}
+  .t-head{text-align:center;max-width:600px;margin:0 auto 60px;}
+  .t-head h2{font-size:clamp(28px,4vw,40px);}
+  .t-grid{display:grid;grid-template-columns:1fr;gap:32px;}
+  @media(min-width:900px){.t-grid{grid-template-columns:repeat(3,1fr);}}
+  .t-card{background:var(--white);padding:40px 34px;border:1px solid var(--line);}
+  .t-stars{color:var(--accent);letter-spacing:3px;margin-bottom:20px;font-size:15px;}
+  .t-card p{font-size:15px;color:#333;margin-bottom:26px;min-height:110px;}
+  .t-person{display:flex;align-items:center;gap:14px;}
+  .t-avatar{width:46px;height:46px;border-radius:50%;overflow:hidden;flex-shrink:0;}
+  .t-person strong{display:block;font-size:14.5px;font-weight:600;}
+  .t-person span{font-size:13px;color:var(--grey);}
+
+  /* CTA / Contact */
+  .contact{padding:120px 0;}
+  .contact-grid{display:grid;grid-template-columns:1fr;gap:60px;}
+  @media(min-width:900px){.contact-grid{grid-template-columns:.9fr 1.1fr;}}
+  .contact-info h2{font-size:clamp(28px,4vw,40px);margin-bottom:20px;}
+  .contact-info p{color:var(--grey);margin-bottom:36px;max-width:420px;}
+  .contact-detail{display:flex;align-items:center;gap:14px;margin-bottom:20px;font-size:15px;}
+  .contact-detail .dot{width:8px;height:8px;border-radius:50%;background:var(--accent);flex-shrink:0;}
+  .contact-social{display:flex;gap:14px;margin-top:36px;}
+  .contact-social a{
+    width:42px;height:42px;border:1px solid var(--line);border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:14px;
+    transition:all .25s;
+  }
+  .contact-social a:hover{background:var(--black);color:var(--white);border-color:var(--black);}
+
+  form{background:var(--light-grey);padding:44px;}
+  .form-row{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:18px;}
+  @media(max-width:500px){.form-row{grid-template-columns:1fr;}}
+  label{font-size:13px;letter-spacing:.4px;display:block;margin-bottom:8px;color:#444;}
+  input,select,textarea{
+    width:100%;padding:13px 14px;border:1px solid var(--line);
+    background:var(--white);font-family:'Assistant',sans-serif;font-size:14.5px;
+    outline:none;transition:border-color .25s;
+  }
+  input:focus,select:focus,textarea:focus{border-color:var(--black);}
+  .full{margin-bottom:18px;}
+  textarea{resize:vertical;min-height:110px;}
+  form .btn{width:100%;margin-top:6px;}
+
+  footer{background:var(--black);color:#ccc;padding:64px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-bottom:50px;}
+  @media(min-width:800px){.footer-grid{grid-template-columns:1.4fr 1fr 1fr 1fr;}}
+  .footer-logo{font-family:'Frank Ruhl Libre',serif;font-size:24px;letter-spacing:4px;color:var(--white);margin-bottom:16px;}
+  .footer-grid p{font-size:14px;color:#999;max-width:280px;}
+  .footer-col h4{color:var(--white);font-size:14px;letter-spacing:.5px;margin-bottom:18px;font-weight:600;}
+  .footer-col ul{list-style:none;}
+  .footer-col li{margin-bottom:11px;}
+  .footer-col a{font-size:14px;color:#999;transition:color .2s;}
+  .footer-col a:hover{color:var(--white);}
+  .footer-bottom{
+    border-top:1px solid #2a2a2a;padding-top:24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;
+    font-size:13px;color:#777;
+  }
+
+  /* Mobile nav */
+  @media(max-width:899px){
+    nav ul{
+      position:fixed;top:73px;right:0;left:0;background:var(--white);
+      flex-direction:column;padding:26px 32px;gap:22px;
+      border-bottom:1px solid var(--line);
+      transform:translateY(-150%);opacity:0;transition:all .3s ease;
+      pointer-events:none;
+    }
+    nav ul.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+    .burger{display:block;}
+    .about-imgs{height:340px;}
+  }
+
+  .reveal{transition:opacity .7s ease, transform .7s ease;}
+  html.js-anim .reveal{opacity:0;transform:translateY(24px);}
+  .reveal.visible{opacity:1;transform:translateY(0);}
+  noscript .reveal{opacity:1;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="#top" class="logo">THINKART</a>
+    <nav>
+      <ul id="navList">
+        <li><a href="#about">אודות</a></li>
+        <li><a href="#services">שירותים</a></li>
+        <li><a href="#gallery">גלריה</a></li>
+        <li><a href="#process">תהליך העבודה</a></li>
+        <li><a href="#testimonials">המלצות</a></li>
+        <li><a href="#contact">צור קשר</a></li>
+      </ul>
+    </nav>
+    <a href="#contact" class="btn nav-cta">קביעת ייעוץ</a>
+    <button class="burger" id="burgerBtn" aria-label="תפריט">☰</button>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="container hero-grid">
+    <div class="hero-text">
+      <span class="section-label">אוצרות אמנות אישית</span>
+      <h1>אמנות שמדברת<br>בשפה של הבית שלך</h1>
+      <p>THINKART מלווה אתכם בבניית אוסף אמנות אישי — מבחירת היצירה הראשונה ועד לעיצוב קיר גלריה שלם, בבתים פרטיים ובמשרדים.</p>
+      <div class="hero-cta">
+        <a href="#contact" class="btn btn-solid">קביעת פגישת ייעוץ</a>
+        <a href="#gallery" class="btn">צפו בגלריה</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>120+</strong><span>פרויקטי אוצרות</span></div>
+        <div><strong>60+</strong><span>אמנים בשיתוף פעולה</span></div>
+        <div><strong>9</strong><span>שנות ניסיון</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="images/gallery-09.jpg" alt="עבודת אמנות בוטנית מול הגינה, בית פרטי">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container about-grid">
+    <div class="about-imgs reveal">
+      <div class="img1"><img src="images/gallery-06.jpg" alt="קיר זיכרון משפחתי בבית פרטי"></div>
+      <div class="img2"><img src="images/gallery-08.jpg" alt="פינת קרמיקה ואמנות בגווני לבן"></div>
+    </div>
+    <div class="reveal">
+      <span class="section-label">מי אנחנו</span>
+      <h2>אוצרות אמנות, מותאמת<br>בדיוק אליכם</h2>
+      <p>ב-THINKART אנחנו מאמינים שאמנות היא לא קישוט — היא שפה. אנחנו עובדים אישית עם כל לקוח כדי להבין את המרחב, האופי והסיפור שלו, ובונים סביבו אוסף אמנות שמרגיש כאילו תמיד היה שם.</p>
+      <p>הצוות שלנו משלב היכרות עמוקה עם סצנת האמנות הישראלית והבינלאומית עם חשיבה עיצובית מדויקת — התוצאה היא חללים שמספרים סיפור אמיתי.</p>
+      <div class="about-points">
+        <div class="about-point"><span class="num">1</span><span>ייעוץ אישי המבוסס על ניתוח החלל והסגנון האישי שלכם</span></div>
+        <div class="about-point"><span class="num">2</span><span>גישה בלעדית לאמנים, גלריות ובתי מכירות פומביות</span></div>
+        <div class="about-point"><span class="num">3</span><span>ליווי מלא — מבחירה ועד תלייה מקצועית</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="container">
+    <div class="services-head reveal">
+      <span class="section-label">מה אנחנו מציעים</span>
+      <h2>שירותי האוצרות שלנו</h2>
+      <p>מפגישת ייעוץ ראשונית ועד לקיר הגלריה המושלם — כל שירות מותאם אישית לחלל, לתקציב ולטעם שלכם.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal">
+        <div class="icon">א</div>
+        <h3>אוצרות לבתים פרטיים</h3>
+        <p>בניית אוסף אמנות שמתכתב עם האדריכלות, האור והאופי של הבית שלכם.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon">ב</div>
+        <h3>אוצרות למשרדים ועסקים</h3>
+        <p>עיצוב חוויית אמנות בסביבת העבודה — מרחבי קבלה, מסדרונות וחדרי ישיבות.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon">ג</div>
+        <h3>ליווי רכישה ואיתור יצירות</h3>
+        <p>איתור יצירות נדירות מגלריות, אמנים עצמאיים ובתי מכירות פומביות בארץ ובעולם.</p>
+      </div>
+      <div class="service-card reveal">
+        <div class="icon">ד</div>
+        <h3>בניית אוסף לטווח ארוך</h3>
+        <p>ליווי מתמשך בהרחבת האוסף שלכם — עם דגש על ערך אמנותי וכלכלי לאורך זמן.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="gallery" id="gallery">
+  <div class="container">
+    <div class="gallery-head reveal">
+      <div>
+        <span class="section-label">עבודות נבחרות</span>
+        <h2>גלריית עבודות</h2>
+      </div>
+      <p>מבחר מתוך פרויקטי אוצרות שביצענו לאחרונה בבתים פרטיים ובמשרדים.</p>
+    </div>
+    <div class="gallery-filters reveal">
+      <button class="filter-btn active" data-filter="all">הכל</button>
+      <button class="filter-btn" data-filter="home">בתים פרטיים</button>
+      <button class="filter-btn" data-filter="office">משרדים</button>
+      <button class="filter-btn" data-filter="collection">אוספים</button>
+    </div>
+    <div class="gallery-grid reveal">
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-01.jpg" alt="מסדרון משרדי עם עבודות אמנות ממוסגרות">
+        <div class="overlay"><span><strong>לובי משרדים</strong>אוצרות למסדרון כניסה</span></div>
+      </div>
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-02.jpg" alt="מסדרון משרדי ארוך עם עבודות גיאומטריות">
+        <div class="overlay"><span><strong>קומת משרדים</strong>סדרת עבודות גיאומטריות</span></div>
+      </div>
+      <div class="gallery-item" data-cat="collection">
+        <img src="images/gallery-03.jpg" alt="פרט מקרוב של עבודת אמנות בגוון זהב">
+        <div class="overlay"><span><strong>אוסף פרטי</strong>עבודה בגימור זהב</span></div>
+      </div>
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-05.jpg" alt="שתי עבודות אמנות אבסטרקטיות במשרד">
+        <div class="overlay"><span><strong>קומת משרדים</strong>זוג עבודות נבחרות</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-06.jpg" alt="קיר זיכרון משפחתי עם מסגרות וינטג'">
+        <div class="overlay"><span><strong>בית פרטי</strong>קיר זיכרון משפחתי</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-07.jpg" alt="עבודת אמנות מופשטת בצהוב ליד חלון">
+        <div class="overlay"><span><strong>בית פרטי</strong>עבודה מופשטת בפינת ישיבה</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-08.jpg" alt="מדף קרמיקה לבנה ועבודת אמנות">
+        <div class="overlay"><span><strong>בית פרטי</strong>פינת קרמיקה ואמנות בלבן</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-09.jpg" alt="עבודת אמנות בוטנית מול הגינה">
+        <div class="overlay"><span><strong>בית פרטי</strong>עבודה בוטנית מול הגינה</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-10.jpg" alt="פסל ותפאורה על שידה עתיקה">
+        <div class="overlay"><span><strong>בית פרטי</strong>פסל ותפאורה בסלון</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-11.jpg" alt="פינת ישיבה קלאסית עם עבודת אמנות ממוסגרת">
+        <div class="overlay"><span><strong>בית פרטי</strong>פינת ישיבה קלאסית</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-12.jpg" alt="חדר אוכל עם עבודת קיר כחולה גדולה">
+        <div class="overlay"><span><strong>בית פרטי</strong>עבודת קיר בחדר האוכל</span></div>
+      </div>
+      <div class="gallery-item" data-cat="home">
+        <img src="images/gallery-15.jpg" alt="סלון פנטהאוז עם חלונות ענק ועבודת אמנות">
+        <div class="overlay"><span><strong>פנטהאוז</strong>עבודת פופ-ארט מול הים</span></div>
+      </div>
+      <div class="gallery-item" data-cat="office">
+        <img src="images/gallery-16.jpg" alt="פסל זכוכית עגול ועבודת קיר צבעונית במסדרון משרדי">
+        <div class="overlay"><span><strong>לובי משרדים</strong>פסל זכוכית ועבודת קיר צבעונית</span></div>
+      </div>
+    </div>
+    <div class="gallery-more reveal">
+      <a href="#contact" class="btn">לפרויקט אוצרות משלכם</a>
+    </div>
+  </div>
+</section>
+
+<section class="process" id="process">
+  <div class="container">
+    <div class="process-head reveal">
+      <span class="section-label">איך זה עובד</span>
+      <h2>תהליך העבודה שלנו</h2>
+    </div>
+    <div class="process-steps">
+      <div class="process-step reveal">
+        <span class="step-num">01</span>
+        <h3>פגישת היכרות</h3>
+        <p>נכיר את החלל, הטעם האישי והמטרות שלכם — בבית או במשרד.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="step-num">02</span>
+        <h3>הצעת אוצרות</h3>
+        <p>נבנה עבורכם מצגת יצירות נבחרות המתאימות לחלל ולתקציב.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="step-num">03</span>
+        <h3>רכישה וליווי</h3>
+        <p>נלווה אתכם ברכישה מול האמנים והגלריות, כולל בדיקת מקוריות וערך.</p>
+      </div>
+      <div class="process-step reveal">
+        <span class="step-num">04</span>
+        <h3>התקנה סופית</h3>
+        <p>תלייה והצבה מקצועית, עם תשומת לב לתאורה ולקומפוזיציה הכוללת.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials">
+  <div class="container">
+    <div class="t-head reveal">
+      <span class="section-label">לקוחות מספרים</span>
+      <h2>מה אומרים עלינו</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"THINKART הפכו קיר ריק בסלון שלנו לנקודת המפגש של הבית. הליווי היה מקצועי, אישי ומדויק."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="לקוחה"></div>
+          <div><strong>נועה כהן</strong><span>וילה, הרצליה פיתוח</span></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"בזכות הצוות בנינו אוסף אמנות למשרד שמרשים כל לקוח שנכנס. תשומת הלב לפרטים פשוט מדהימה."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="לקוח"></div>
+          <div><strong>איתי לוין</strong><span>מנכ"ל, חברת הייטק</span></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"ליווי אישי אמיתי — לא רק המלצה על יצירות, אלא הבנה עמוקה של מי שאנחנו ומה שאנחנו אוהבים."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" alt="לקוחה"></div>
+          <div><strong>מיכל שגיא</strong><span>דירת גג, יפו</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="section-label">בואו נתחיל</span>
+      <h2>קביעת פגישת ייעוץ</h2>
+      <p>מוזמנים ליצור קשר לפגישת היכרות ראשונית ללא התחייבות. נשמח להכיר את החלל שלכם ולהתחיל לבנות יחד את האוסף המתאים לכם.</p>
+      <div class="contact-detail"><span class="dot"></span><span>studio@thinkart.co.il</span></div>
+      <div class="contact-detail"><span class="dot"></span><span>03-1234567</span></div>
+      <div class="contact-detail"><span class="dot"></span><span>סטודיו THINKART, שדרות רוטשילד 22, תל אביב</span></div>
+      <div class="contact-social">
+        <a href="#" aria-label="אינסטגרם">IG</a>
+        <a href="#" aria-label="פייסבוק">FB</a>
+        <a href="#" aria-label="לינקדאין">IN</a>
+      </div>
+    </div>
+    <form class="reveal" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='תודה, ניצור קשר בקרוב!';">
+      <div class="form-row">
+        <div>
+          <label for="name">שם מלא</label>
+          <input type="text" id="name" required placeholder="השם שלך">
+        </div>
+        <div>
+          <label for="phone">טלפון</label>
+          <input type="tel" id="phone" required placeholder="050-0000000">
+        </div>
+      </div>
+      <div class="full">
+        <label for="email">אימייל</label>
+        <input type="email" id="email" required placeholder="you@email.com">
+      </div>
+      <div class="full">
+        <label for="type">סוג הפרויקט</label>
+        <select id="type">
+          <option>אוצרות לבית פרטי</option>
+          <option>אוצרות למשרד</option>
+          <option>ליווי רכישה</option>
+          <option>אחר</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="msg">ספרו לנו קצת על הפרויקט</label>
+        <textarea id="msg" placeholder="גודל החלל, סגנון מועדף, תקציב משוער..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">שליחת פנייה</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">THINKART</div>
+        <p>אוצרות אמנות אישית לבתים ומשרדים. אנחנו מאמינים שכל קיר יכול לספר סיפור.</p>
+      </div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="#about">אודות</a></li>
+          <li><a href="#services">שירותים</a></li>
+          <li><a href="#gallery">גלריה</a></li>
+          <li><a href="#contact">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul>
+          <li><a href="#services">אוצרות לבתים</a></li>
+          <li><a href="#services">אוצרות למשרדים</a></li>
+          <li><a href="#services">ליווי רכישה</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>צרו קשר</h4>
+        <ul>
+          <li><a href="#">studio@thinkart.co.il</a></li>
+          <li><a href="#">03-1234567</a></li>
+          <li><a href="#">תל אביב</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 THINKART. כל הזכויות שמורות.</span>
+      <span>עוצב באהבה לאמנות</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+try {
+  // mobile nav toggle
+  const burger = document.getElementById('burgerBtn');
+  const navList = document.getElementById('navList');
+  if (burger && navList) {
+    burger.addEventListener('click', () => navList.classList.toggle('open'));
+    navList.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navList.classList.remove('open')));
+  }
+
+  // gallery filter
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const items = document.querySelectorAll('.gallery-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const f = btn.dataset.filter;
+      items.forEach(item => {
+        item.style.display = (f === 'all' || item.dataset.cat === f) ? '' : 'none';
+      });
+    });
+  });
+
+  // reveal on scroll (with fallback safety timer in case observer never fires)
+  const revealEls = document.querySelectorAll('.reveal');
+  const showAll = () => revealEls.forEach(el => el.classList.add('visible'));
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, {threshold: 0.15});
+    revealEls.forEach(el => io.observe(el));
+    // safety net: force-show anything still hidden after 2.5s (covers edge cases/odd viewports)
+    setTimeout(showAll, 2500);
+  } else {
+    showAll();
+  }
+} catch (err) {
+  // if anything above fails, make sure content is still visible
+  document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+  console.error(err);
+}
+</script>
+
+</body>
+</html>

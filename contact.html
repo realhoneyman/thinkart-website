@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>צור קשר | THINKART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="logo">THINKART</a>
+    <nav>
+      <ul id="navList">
+        <li><a href="index.html">בית</a></li>
+        <li><a href="about.html">אודות</a></li>
+        <li><a href="services.html">שירותים</a></li>
+        <li><a href="gallery.html">גלריה</a></li>
+        <li><a href="contact.html" class="active">צור קשר</a></li>
+      </ul>
+    </nav>
+    <a href="contact.html" class="btn nav-cta">קביעת ייעוץ</a>
+    <button class="burger" id="burgerBtn" aria-label="תפריט">☰</button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index.html">בית</a> / צור קשר</div>
+    <h1>קביעת פגישת ייעוץ</h1>
+    <p>מוזמנים ליצור קשר לפגישת היכרות ראשונית ללא התחייבות.</p>
+  </div>
+</section>
+
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>אוצרות אמנות אישית</span>
+    <span>THINKART</span>
+    <span>בתים ומשרדים</span>
+    <span>אוצרות אמנות אישית</span>
+    <span>THINKART</span>
+    <span>בתים ומשרדים</span>
+  </div>
+</div>
+
+<section class="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="section-label">בואו נתחיל</span>
+      <h2>נשמח לשמוע מכם</h2>
+      <p>מוזמנים ליצור קשר לפגישת היכרות ראשונית ללא התחייבות. נשמח להכיר את החלל שלכם ולהתחיל לבנות יחד את האוסף המתאים לכם.</p>
+      <div class="contact-detail"><span class="dot"></span><span>studio@thinkart.co.il</span></div>
+      <div class="contact-detail"><span class="dot"></span><span>03-1234567</span></div>
+      <div class="contact-detail"><span class="dot"></span><span>סטודיו THINKART, שדרות רוטשילד 22, תל אביב</span></div>
+      <div class="contact-social">
+        <a href="#" aria-label="אינסטגרם">IG</a>
+        <a href="#" aria-label="פייסבוק">FB</a>
+        <a href="#" aria-label="לינקדאין">IN</a>
+      </div>
+    </div>
+    <form class="reveal" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='תודה, ניצור קשר בקרוב!';">
+      <div class="form-row">
+        <div>
+          <label for="name">שם מלא</label>
+          <input type="text" id="name" required placeholder="השם שלך">
+        </div>
+        <div>
+          <label for="phone">טלפון</label>
+          <input type="tel" id="phone" required placeholder="050-0000000">
+        </div>
+      </div>
+      <div class="full">
+        <label for="email">אימייל</label>
+        <input type="email" id="email" required placeholder="you@email.com">
+      </div>
+      <div class="full">
+        <label for="type">סוג הפרויקט</label>
+        <select id="type">
+          <option>אוצרות לבית פרטי</option>
+          <option>אוצרות למשרד</option>
+          <option>ליווי רכישה</option>
+          <option>אחר</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="msg">ספרו לנו קצת על הפרויקט</label>
+        <textarea id="msg" placeholder="גודל החלל, סגנון מועדף, תקציב משוער..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">שליחת פנייה</button>
+    </form>
+  </div>
+</section>
+
+<section class="testimonials on-white">
+  <div class="container">
+    <div class="t-head reveal">
+      <span class="section-label">לקוחות מספרים</span>
+      <h2>מה אומרים עלינו</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"THINKART הפכו קיר ריק בסלון שלנו לנקודת המפגש של הבית. הליווי היה מקצועי, אישי ומדויק."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="לקוחה"></div>
+          <div><strong>נועה כהן</strong><span>וילה, הרצליה פיתוח</span></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"בזכות הצוות בנינו אוסף אמנות למשרד שמרשים כל לקוח שנכנס. תשומת הלב לפרטים פשוט מדהימה."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="לקוח"></div>
+          <div><strong>איתי לוין</strong><span>מנכ"ל, חברת הייטק</span></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"ליווי אישי אמיתי — לא רק המלצה על יצירות, אלא הבנה עמוקה של מי שאנחנו ומה שאנחנו אוהבים."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" alt="לקוחה"></div>
+          <div><strong>מיכל שגיא</strong><span>דירת גג, יפו</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">THINKART</div>
+        <p>אוצרות אמנות אישית לבתים ומשרדים. אנחנו מאמינים שכל קיר יכול לספר סיפור.</p>
+      </div>
+      <div class="footer-col">
+        <h4>ניווט</h4>
+        <ul>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="services.html">שירותים</a></li>
+          <li><a href="gallery.html">גלריה</a></li>
+          <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>שירותים</h4>
+        <ul>
+          <li><a href="services.html">אוצרות לבתים</a></li>
+          <li><a href="services.html">אוצרות למשרדים</a></li>
+          <li><a href="services.html">ליווי רכישה</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>צרו קשר</h4>
+        <ul>
+          <li><a href="#">studio@thinkart.co.il</a></li>
+          <li><a href="#">03-1234567</a></li>
+          <li><a href="#">תל אביב</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 THINKART. כל הזכויות שמורות.</span>
+      <span>עוצב באהבה לאמנות</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
