@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact | THINKART</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style-en.css">
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index-en.html" class="logo">THINKART</a>
+    <nav>
+      <ul id="navList">
+        <li><a href="index-en.html">Home</a></li>
+        <li><a href="about-en.html">About</a></li>
+        <li><a href="services-en.html">Services</a></li>
+        <li><a href="gallery-en.html">Gallery</a></li>
+        <li><a href="contact-en.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="contact-en.html" class="btn nav-cta">Book a Consultation</a>
+    <a href="contact.html" class="lang-toggle">עב</a>
+    <button class="burger" id="burgerBtn" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<section class="page-banner">
+  <div class="container">
+    <div class="breadcrumb"><a href="index-en.html">Home</a> / Contact</div>
+    <h1>Book a Consultation</h1>
+    <p>Reach out for an initial, no-commitment introductory meeting.</p>
+  </div>
+</section>
+
+<section class="contact">
+  <div class="container contact-grid">
+    <div class="contact-info reveal">
+      <span class="section-label">Let's Get Started</span>
+      <h2>We'd Love to Hear From You</h2>
+      <p>Reach out for an initial, no-commitment introductory meeting. We'd love to learn about your space and start building the right collection for you together.</p>
+      <div class="contact-detail"><span class="dot"></span><span>studio@thinkart.co.il</span></div>
+      <div class="contact-detail"><span class="dot"></span><span>03-1234567</span></div>
+      <div class="contact-detail"><span class="dot"></span><span>THINKART Studio, 22 Rothschild Blvd, Tel Aviv</span></div>
+      <div class="contact-social">
+        <a href="#" aria-label="Instagram">IG</a>
+        <a href="#" aria-label="Facebook">FB</a>
+        <a href="#" aria-label="LinkedIn">IN</a>
+      </div>
+    </div>
+    <form class="reveal" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='Thanks, we\'ll be in touch soon!';">
+      <div class="form-row">
+        <div>
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required placeholder="Your name">
+        </div>
+        <div>
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" required placeholder="050-0000000">
+        </div>
+      </div>
+      <div class="full">
+        <label for="email">Email</label>
+        <input type="email" id="email" required placeholder="you@email.com">
+      </div>
+      <div class="full">
+        <label for="type">Project Type</label>
+        <select id="type">
+          <option>Private Home Curation</option>
+          <option>Office Curation</option>
+          <option>Acquisition Support</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="full">
+        <label for="msg">Tell Us About Your Project</label>
+        <textarea id="msg" placeholder="Space size, preferred style, estimated budget..."></textarea>
+      </div>
+      <button type="submit" class="btn btn-solid">Send Inquiry</button>
+    </form>
+  </div>
+</section>
+
+<section class="testimonials on-white">
+  <div class="container">
+    <div class="t-head reveal">
+      <span class="section-label">Clients Say</span>
+      <h2>What They Say About Us</h2>
+    </div>
+    <div class="t-grid">
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"THINKART turned a blank wall in our living room into the meeting point of the home. The guidance was professional, personal and precise."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=200&auto=format&fit=crop" alt="Client"></div>
+          <div><strong>Noa Cohen</strong><span>Villa, Herzliya Pituach</span></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"Thanks to the team we built an art collection for the office that impresses every client who walks in. The attention to detail is simply amazing."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=200&auto=format&fit=crop" alt="Client"></div>
+          <div><strong>Itai Levin</strong><span>CEO, Tech Company</span></div>
+        </div>
+      </div>
+      <div class="t-card reveal">
+        <div class="t-stars">★★★★★</div>
+        <p>"Truly personal guidance — not just recommending pieces, but a deep understanding of who we are and what we love."</p>
+        <div class="t-person">
+          <div class="t-avatar"><img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?q=80&w=200&auto=format&fit=crop" alt="Client"></div>
+          <div><strong>Michal Sagi</strong><span>Rooftop Apartment, Jaffa</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">THINKART</div>
+        <p>Personal art curation for homes and offices. We believe every wall can tell a story.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="about-en.html">About</a></li>
+          <li><a href="services-en.html">Services</a></li>
+          <li><a href="gallery-en.html">Gallery</a></li>
+          <li><a href="contact-en.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="services-en.html">Home Curation</a></li>
+          <li><a href="services-en.html">Office Curation</a></li>
+          <li><a href="services-en.html">Acquisition Support</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="#">studio@thinkart.co.il</a></li>
+          <li><a href="#">03-1234567</a></li>
+          <li><a href="#">Tel Aviv</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 THINKART. All rights reserved.</span>
+      <span>Designed with love for art</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
