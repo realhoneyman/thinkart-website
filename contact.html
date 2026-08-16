@@ -52,24 +52,28 @@
         <a href="#" aria-label="לינקדאין">IN</a>
       </div>
     </div>
-    <form class="reveal" onsubmit="event.preventDefault(); this.querySelector('.btn').textContent='תודה, ניצור קשר בקרוב!';">
+    <form class="reveal" action="https://formsubmit.co/meggi.bibi@gmail.com" method="POST">
+      <input type="hidden" name="_subject" value="פנייה חדשה מאתר THINKART">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://www.wethinkart.com/contact.html">
+      <input type="text" name="_honey" style="display:none">
       <div class="form-row">
         <div>
           <label for="name">שם מלא</label>
-          <input type="text" id="name" required placeholder="השם שלך">
+          <input type="text" id="name" name="name" required placeholder="השם שלך">
         </div>
         <div>
           <label for="phone">טלפון</label>
-          <input type="tel" id="phone" required placeholder="050-0000000">
+          <input type="tel" id="phone" name="phone" required placeholder="050-0000000">
         </div>
       </div>
       <div class="full">
         <label for="email">אימייל</label>
-        <input type="email" id="email" required placeholder="you@email.com">
+        <input type="email" id="email" name="email" required placeholder="you@email.com">
       </div>
       <div class="full">
         <label for="type">סוג הפרויקט</label>
-        <select id="type">
+        <select id="type" name="project_type">
           <option>אוצרות לבית פרטי</option>
           <option>אוצרות למשרד</option>
           <option>ליווי רכישה</option>
@@ -78,7 +82,7 @@
       </div>
       <div class="full">
         <label for="msg">ספרו לנו קצת על הפרויקט</label>
-        <textarea id="msg" placeholder="גודל החלל, סגנון מועדף, תקציב משוער..."></textarea>
+        <textarea id="msg" name="message" placeholder="גודל החלל, סגנון מועדף, תקציב משוער..."></textarea>
       </div>
       <button type="submit" class="btn btn-solid">שליחת פנייה</button>
     </form>
